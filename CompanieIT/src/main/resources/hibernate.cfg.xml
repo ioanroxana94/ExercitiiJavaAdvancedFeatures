@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- dialectul folosit -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- driver pt baza de date jdbc -->
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <!-- adresa bazei de date -->
+        <property name="hibernate.connection.url">jdbc:mysql://127.0.0.1:3306/IT_company?serverTimezone=UTC</property>
+        <!-- username pentru conectarea la baza de date -->
+        <property name="hibernate.connection.username">root</property>
+        <!-- parola pentru conectarea la baza de date -->
+        <property name="hibernate.connection.password">poalelungi94</property>
+
+        <!-- proprietate care forteaza Hibernate sa afiseze query-urile rulate in baza de date-->
+        <property name="show_sql">true</property>
+
+        <!-- specificam clasele care trebuiesc mapate cu un tabel in baza de date -->
+        <mapping class="entities.Product"/>
+        <mapping class="entities.Department"/>
+        <mapping class="entities.Employee"/>
+
+
+    </session-factory>
+</hibernate-configuration>
